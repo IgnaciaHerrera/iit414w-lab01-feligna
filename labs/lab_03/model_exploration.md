@@ -50,7 +50,7 @@ A Formula 1 team principal wants to know: **"Given a driver's grid position and 
 
 ## 2. Comparison Table (Same Metric, Same Validation: 2023–2024 Test Set)
 
-| Model | Train MAE | Test MAE | Gap | WHY (Razonamiento) |
+| Model | Train MAE | Test MAE | Gap | WHY |
 |---|---|---|---|---|
 | Predict Mean | — | 5.923 | — | Predicts 5.09 (mean); ignores all features |
 | Predict Median | — | 5.129 | — | Median=1.0 due to ~50% zero-inflation; more robust than mean |
