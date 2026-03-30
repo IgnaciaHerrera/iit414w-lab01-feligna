@@ -1,4 +1,4 @@
-# Model Exploration - Feligna (IIT414W)
+# Model Exploration - Feligna (Felipe Vázquez e Ignacia Herrera) (IIT414W)
 ## IIT414W - Unit II - Lab 3 - Initial Exploration - March 30, 2026
 
 ---
