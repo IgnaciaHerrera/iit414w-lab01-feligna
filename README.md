@@ -4,7 +4,7 @@
 
 **Team:** feligna  
 **Course:** IIT414W
-**Period:** March 2026
+**Period:** April 2026
 
 This repository contains a decision-oriented exploratory data analysis (EDA) and baseline modeling pipeline to predict whether an F1 driver finishes in the Top 10 across the 2022–2024 seasons.
 

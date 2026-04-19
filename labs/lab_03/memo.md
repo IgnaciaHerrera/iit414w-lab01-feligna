@@ -43,7 +43,7 @@ Beyond grid position, a driver's form over the last 3 races improves prediction 
 Tested on 451 independent race entries (2023-2024 seasons):
 - **Prediction error: ±2.88 points on average**
 - **80th percentile error: ±6.1 points** (one in five predictions miss by more than this)
-- **Model generalization: Perfect** (training error ≈ test error, no overfitting)
+- **Model generalization: Perfect** (training error ≈ test error; no overfitting = model doesn't memorize training data)
 
 **Comparison to alternatives:**
 | Strategy | Accuracy | Why It Fails |
@@ -58,7 +58,7 @@ Tested on 451 independent race entries (2023-2024 seasons):
 
 ### Critical Gaps (High Impact)
 
-1. **DNF/Crash Prediction:** Model assumes race completion. 50% of drivers score 0 due to mechanical failure, collision, or retirement. The model predicts "expected points if the driver finishes," not "will the driver finish?"
+1. **DNF/Crash Prediction (Did Not Finish):** Model assumes race completion. 50% of drivers score 0 due to mechanical failure, collision, or retirement. The model predicts "expected points if the driver finishes," not "will the driver finish?"
    - **Risk:** Using the model to predict a score in a race with wet weather (high DNF rate) will be 2-3 pts overoptimistic
 
 2. **New Driver/Constructor Data:** Trained on 2018-2022; 2023-2024 introduces:
@@ -71,7 +71,7 @@ Tested on 451 independent race entries (2023-2024 seasons):
 
 ### Moderate Gaps (Medium Impact)
 
-4. **Strategy Variance:** Model can't predict pit stop gambles, safety car window advantages, or undercut/overcut success. These can swing a race by ±3 points.
+4. **Strategy Variance:** Model can't predict pit stop timing decisions, safety car window advantages, or other race-day strategic changes. These can swing a race by ±3 points.
 
 5. **Driver-Specific Talent at Extremes:** Model handles "typical" drivers well but underfits for outliers (e.g., "Max Verstappen" may outscore baseline by 5+ pts; "pay drivers" may underperform by 4+ pts).
 
@@ -106,7 +106,7 @@ Tested on 451 independent race entries (2023-2024 seasons):
 
 ### Medium-term (Months 1-3)
 1. Integrate weather data; retrain with wet/dry flags
-2. Add crash probability sub-model (separate binary classifier)
+2. Add crash probability sub-model (separate yes-or-no prediction model for driver DNFs)
 3. Track prediction errors per driver; identify over/under-performers vs. model
 
 ### Long-term (Ongoing)
